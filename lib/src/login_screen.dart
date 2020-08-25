@@ -2,6 +2,7 @@ import 'package:pictora/src/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pictora/src/register_user.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key key}) : super(key: key);
@@ -60,6 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   onTap: (){
+                    Fluttertoast.showToast(msg: "User ${_usernameController.text} registered successfully!");
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => RegisterUser()),
